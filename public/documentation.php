@@ -85,6 +85,14 @@ $resultVilles = $stmt->fetchAll();
                                 <br>Exemples : 450, 320000, 870. 
                                 <br>Le budget sera assoupli à +/- 5% pour garantir des résultats
                             </li>
+                            <li style="margin-bottom:10px;">
+                                vente <b>(tinyint)</b> 
+                                <br>Exemples : 0, 1 
+                            </li>
+                            <li style="margin-bottom:10px;">
+                                location <b>(tinyint)</b> 
+                                <br>Exemples : 0, 1 
+                            </li>
                         </ul>
                         <h4>Résultat : </h4>
                         <pre>
