@@ -1,4 +1,6 @@
 <?php
 
-http_response_code(404);
-exit();
+echo "Salut la classe 8)";
+
+// http_response_code(404);
+// exit();
