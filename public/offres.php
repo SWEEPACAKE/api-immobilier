@@ -24,7 +24,8 @@ if(!empty($_GET)) {
 
 $query = "SELECT * FROM offre $condition ORDER BY id DESC";
 
-
-$result = $database->execute_query($query, $array_params)->fetch_all(MYSQLI_ASSOC);
+$stmt = $database->prepare($query);
+$stmt->execute($array_params);
+$result = $stmt->fetchAll();
 
 var_dump($result);

@@ -8,11 +8,11 @@ $pass = $config['db']['pass'];
 $name = $config['db']['name'];
 
 try {
-    $database = new mysqli($host, $user, $pass, $name);
-    mysqli_set_charset($database, "utf8mb4");
-    if ($database->connect_error) {
-        throw new Exception('Connection failed: ' . $database->connect_error);
-    }
+    $dsn = 'mysql:host=' . $host . ';dbname=' . $name . ';charset=utf8mb4';
+    $database = new PDO($dsn, $user, $pass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
 } catch (Exception $e) {
     die('Database error: ' . $e->getMessage());
 }
