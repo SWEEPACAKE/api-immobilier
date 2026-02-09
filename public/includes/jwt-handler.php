@@ -16,7 +16,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-$config = require_once __DIR__ . '/config.php';
+$config = require __DIR__ . '/config.php';
 // Le token en lui-même, en dur certes mais côté back
 $secret = $config['jwt']['secret'];
 // Si on n'a pas de header "Authorization" alors on coupe court et on renvoie une 401
